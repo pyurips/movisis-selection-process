@@ -4,10 +4,12 @@ import { Outlet } from 'react-router-dom';
 
 export default function App() {
   return (
-    <>
+    <div className="flex flex-col items-center">
       <NavBar />
-      <Outlet />
-      <Footer />
-    </>
+      <main className="w-full max-w-screen-lg">
+        <Outlet />
+        <Footer />
+      </main>
+    </div>
   );
 }
