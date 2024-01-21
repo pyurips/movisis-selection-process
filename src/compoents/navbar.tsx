@@ -26,12 +26,16 @@ export default function NavBar() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex w-full" justify='center'>
-        <NavbarItem className='w-full'>
+      <NavbarContent className="hidden sm:flex w-full" justify="center">
+        <NavbarItem className="w-full">
           <Input
             className="w-full"
             placeholder="Descubra novas histórias"
-            startContent={<MdOutlineSearch size={25} />}
+            endContent={
+              <Button>
+                <MdOutlineSearch size={25} />
+              </Button>
+            }
           />
         </NavbarItem>
       </NavbarContent>
