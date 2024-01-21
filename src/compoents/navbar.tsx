@@ -20,13 +20,13 @@ export default function NavBar() {
           //aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className="sm:hidden"
         />
-        <NavbarBrand>
+        <NavbarBrand className='hidden sm:flex'>
           <MdCollectionsBookmark size={25} />
           <p className="font-bold text-inherit">Readify</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex w-full" justify="center">
+      <NavbarContent className="w-full" justify="center">
         <NavbarItem className="w-full">
           <Input
             className="w-full"
@@ -39,8 +39,8 @@ export default function NavBar() {
           />
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
+      <NavbarContent className='hidden sm:flex' justify="end">
+        <NavbarItem>
           <Link href="#">Entrar</Link>
         </NavbarItem>
         <NavbarItem>
