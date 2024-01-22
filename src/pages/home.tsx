@@ -21,13 +21,15 @@ export default function Home() {
           className="flex flex-row gap-5 w-full py-3"
           hideScrollBar={true}
         >
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
+          <EbookCard id="dasdad" />
+          <EbookCard id="1546456" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="1546456" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="1546456" />
+          <EbookCard id="dasdad" />
         </ScrollShadow>
       </section>
 
@@ -43,18 +45,14 @@ export default function Home() {
         <HomeFilter />
 
         <div className="grid grid-cols-4 gap-3">
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
-          <EbookCard />
+          <EbookCard id="dasdad" />
+          <EbookCard id="1546456" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="1546456" />
+          <EbookCard id="dasdad" />
+          <EbookCard id="dasdad" />
         </div>
       </section>
     </section>

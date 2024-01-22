@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
 import Home from './pages/home.tsx';
+import EbookPerId from './pages/ebook_per_id.tsx';
+import Checkout from './pages/checkout.tsx';
 
 const temporaryThemeHandler = true;
 
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/ebook/:id',
+        element: <EbookPerId />,
+      },
+      {
+        path: '/checkout',
+        element: <Checkout />,
       },
     ],
   },

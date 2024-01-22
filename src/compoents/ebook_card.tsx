@@ -1,13 +1,16 @@
 import { Card, CardBody, CardFooter, Image, Chip } from '@nextui-org/react';
+import { useNavigate } from "react-router-dom";
 import { BiSolidLike } from 'react-icons/bi';
 
-export default function EbookCard() {
+export default function EbookCard({ id }: { id: string }) {
+  const navigate = useNavigate();
+
   return (
     <Card
       shadow="sm"
       //key={index}
       isPressable
-      onPress={() => console.log('item pressed')}
+      onPress={() => navigate('/ebook/' + id)}
       className="min-w-[200px] w-[200px]"
     >
       <CardBody className="overflow-visible p-0">
