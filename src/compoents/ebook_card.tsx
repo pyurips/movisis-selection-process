@@ -1,4 +1,5 @@
-import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
+import { Card, CardBody, CardFooter, Image, Chip } from '@nextui-org/react';
+import { BiSolidLike } from 'react-icons/bi';
 
 export default function EbookCard() {
   return (
@@ -7,7 +8,7 @@ export default function EbookCard() {
       //key={index}
       isPressable
       onPress={() => console.log('item pressed')}
-      className="min-w-[200px]"
+      className="min-w-[200px] w-[200px]"
     >
       <CardBody className="overflow-visible p-0">
         <Image
@@ -21,10 +22,15 @@ export default function EbookCard() {
           }
         />
 
-        <p className='p-2 text-stone-700 font-bold text-sm'>Nome do livro</p>
+        <div className="flex flex-row items-center justify-between p-2">
+          <p className=" text-stone-700 font-bold text-sm">Nome do livro</p>
+          <Chip startContent={<BiSolidLike />} size="sm" color="success" variant='flat'>
+            80%
+          </Chip>
+        </div>
       </CardBody>
       <CardFooter className="text-small justify-between">
-        <p className='font-bold text-stone-500'>Autor</p>
+        <p className="font-bold text-stone-500">Autor</p>
         <p className="text-stone-800">{'R$ 29,00'}</p>
       </CardFooter>
     </Card>

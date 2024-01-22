@@ -14,7 +14,7 @@ export default function HomeFilter() {
   const [selectedFilter, setSelectedFilter] = useState(['Mais populares']);
 
   return (
-    <div className="flex flex-row gap-2">
+    <div className="flex flex-row gap-2 items-center">
       <Select label="Selecionar por categoria">
         {bookCategories.map((category) => (
           <SelectItem key={category} value={category}>
