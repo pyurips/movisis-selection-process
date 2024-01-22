@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="flex flex-col items-center">
       <NavBar />
-      <main className="w-full max-w-screen-lg">
+      <main className="w-full max-w-screen-lg py-3">
         <Outlet />
         <Footer />
       </main>
