@@ -5,9 +5,14 @@ import ReaderRatingComment from '../compoents/reader_rating_comment';
 import { ScrollShadow } from '@nextui-org/react';
 import { BiSolidLike } from 'react-icons/bi';
 import { IoMdCart } from 'react-icons/io';
+import { useEffect } from 'react';
 
 export default function EbookPerId() {
   const { id } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className="flex flex-col gap-10">
