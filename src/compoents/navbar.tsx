@@ -11,8 +11,11 @@ import {
   Input,
 } from '@nextui-org/react';
 import { MdCollectionsBookmark, MdOutlineSearch } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
+  const navigate = useNavigate();
+
   return (
     <Navbar /*onMenuOpenChange={setIsMenuOpen}*/>
       <NavbarContent>
@@ -20,9 +23,11 @@ export default function NavBar() {
           //aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className="sm:hidden"
         />
-        <NavbarBrand className='hidden sm:flex'>
-          <MdCollectionsBookmark size={25} />
-          <p className="font-bold text-inherit">Readify</p>
+        <NavbarBrand className="hidden sm:flex">
+          <Button variant='light' onPress={() => navigate('/')}>
+            <MdCollectionsBookmark size={25} />
+            <p className="font-bold text-inherit">Readify</p>
+          </Button>
         </NavbarBrand>
       </NavbarContent>
 
@@ -39,7 +44,7 @@ export default function NavBar() {
           />
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent className='hidden sm:flex' justify="end">
+      <NavbarContent className="hidden sm:flex" justify="end">
         <NavbarItem>
           <Link href="#">Entrar</Link>
         </NavbarItem>

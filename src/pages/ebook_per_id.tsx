@@ -52,8 +52,8 @@ export default function EbookPerId() {
             >
               80%
             </Chip>
-            <p className="text-md text-stone-900 font-semibold">450 páginas</p>
-            <p className="text-md text-stone-900 font-semibold">Português</p>
+            <p className="text-md text-stone-600 font-semibold">450 páginas</p>
+            <p className="text-md text-stone-600 font-semibold">Português</p>
             <p className="text-md text-stone-900 font-semibold">R$ 29,99</p>
           </div>
         </div>
