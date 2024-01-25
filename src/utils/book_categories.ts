@@ -1,4 +1,5 @@
 const bookCategories = [
+  'Todos',
   'Ficção',
   'Não Ficção',
   'Fantasia',

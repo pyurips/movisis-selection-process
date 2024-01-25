@@ -3,8 +3,12 @@ import HomeMainPost from "../compoents/home_main_post";
 import { ScrollShadow } from "@nextui-org/react";
 import HomeFilter from "../compoents/home_filter";
 import booksList from "../utils/books_list";
+import { useState } from "react";
 
 export default function Home() {
+  const [filter, setFilter] = useState([]);
+  const [category, setCategory] = useState([]);
+
   return (
     <section className="flex flex-col gap-10">
       <HomeMainPost />
@@ -50,25 +54,49 @@ export default function Home() {
             Navegue e descubra de acordo com seus gostos
           </p>
         </div>
-        <HomeFilter />
+        <HomeFilter
+          filterHandler={(e) => setFilter(e)}
+          categoryHandler={(e) => setCategory(e)}
+        />
 
         <div className="grid grid-cols-4 gap-3">
-          {booksList.map((e) => (
-            <EbookCard
-              id={e.id}
-              author={
-                e.author.length >= 15 ? e.author.slice(0, 15) + "..." : e.author
-              }
-              coverUrl={e.coverUrl}
-              rating={e.rating}
-              price={e.price}
-              bookName={
-                e.bookName.length >= 15
-                  ? e.bookName.slice(0, 15) + "..."
-                  : e.bookName
-              }
-            />
-          ))}
+          {category[0] === "Todos"
+            ? booksList.map((e) => (
+                <EbookCard
+                  id={e.id}
+                  author={
+                    e.author.length >= 15
+                      ? e.author.slice(0, 15) + "..."
+                      : e.author
+                  }
+                  coverUrl={e.coverUrl}
+                  rating={e.rating}
+                  price={e.price}
+                  bookName={
+                    e.bookName.length >= 15
+                      ? e.bookName.slice(0, 15) + "..."
+                      : e.bookName
+                  }
+                />
+              ))
+            : booksList.filter(e => e.category === category[0]).map((e) => (
+                <EbookCard
+                  id={e.id}
+                  author={
+                    e.author.length >= 15
+                      ? e.author.slice(0, 15) + "..."
+                      : e.author
+                  }
+                  coverUrl={e.coverUrl}
+                  rating={e.rating}
+                  price={e.price}
+                  bookName={
+                    e.bookName.length >= 15
+                      ? e.bookName.slice(0, 15) + "..."
+                      : e.bookName
+                  }
+                />
+              ))}
         </div>
       </section>
     </section>
