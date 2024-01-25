@@ -1,8 +1,15 @@
-import { v4 as uuidv4 } from "uuid";
+const generateRandomDate = () => {
+  const startDate = new Date(2000, 0, 1);
+  const endDate = new Date();
+  return new Date(
+    startDate.getTime() +
+      Math.random() * (endDate.getTime() - startDate.getTime())
+  );
+};
 
 const booksList = [
   {
-    id: uuidv4(),
+    id: "fd6c8637-8eb7-4c13-878f-6c9485d34cea",
     category: "Ficção",
     bookName: "1984",
     coverUrl:
@@ -10,7 +17,7 @@ const booksList = [
     author: "George Orwell",
     rating: 80,
     price: 39.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 336,
     language: "Português",
     reviews: [
@@ -23,7 +30,7 @@ const booksList = [
     ],
   },
   {
-    id: uuidv4(),
+    id: "04286629-90f9-4d9d-a35f-eee560261854",
     category: "Ficção",
     bookName: "Crime e Castigo",
     coverUrl:
@@ -31,7 +38,7 @@ const booksList = [
     author: "Fyodor Dostoevsky",
     rating: 80,
     price: 45.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 544,
     language: "Português",
     reviews: [
@@ -44,7 +51,7 @@ const booksList = [
     ],
   },
   {
-    id: uuidv4(),
+    id: "c844a189-279e-42f4-8af7-bcb417e64866",
     category: "Não Ficção",
     bookName: "Sapiens - Uma Breve História da Humanidade",
     coverUrl:
@@ -52,7 +59,7 @@ const booksList = [
     author: "Yuval Noah Harari",
     rating: 80,
     price: 49.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 464,
     language: "Português",
     reviews: [
@@ -61,14 +68,14 @@ const booksList = [
     ],
   },
   {
-    id: uuidv4(),
+    id: "d880700f-452c-483a-a945-80e72d09339b",
     category: "Não Ficção",
     bookName: "O Poder do Hábito",
     coverUrl: "https://m.media-amazon.com/images/I/51EjznhyV+L.jpg",
     author: "Charles Duhigg",
     rating: 80,
     price: 34.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 416,
     language: "Português",
     reviews: [
@@ -81,7 +88,7 @@ const booksList = [
     ],
   },
   {
-    id: uuidv4(),
+    id: "ba3834e8-c5f4-4656-9a12-d2226619af9a",
     category: "Fantasia",
     bookName: "Harry Potter e as Relíquias da Morte",
     coverUrl:
@@ -89,7 +96,7 @@ const booksList = [
     author: "J.K. Rowling",
     rating: 80,
     price: 55.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 320,
     language: "Português",
     reviews: [
@@ -102,7 +109,7 @@ const booksList = [
     ],
   },
   {
-    id: uuidv4(),
+    id: "4f57c63d-0216-450a-b8cd-0d16debdbecc",
     category: "Fantasia",
     bookName: "O Hobbit",
     coverUrl:
@@ -110,7 +117,7 @@ const booksList = [
     author: "J.R.R. Tolkien",
     rating: 80,
     price: 42.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 320,
     language: "Português",
     reviews: [
@@ -127,7 +134,7 @@ const booksList = [
     ],
   },
   {
-    id: uuidv4(),
+    id: "ca5c1e5e-a40f-4a8d-9d71-b34b33de731b",
     category: "Romance",
     bookName: "Orgulho e Preconceito",
     coverUrl:
@@ -135,7 +142,7 @@ const booksList = [
     author: "Jane Austen",
     rating: 80,
     price: 37.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 432,
     language: "Português",
     reviews: [
@@ -148,7 +155,7 @@ const booksList = [
     ],
   },
   {
-    id: uuidv4(),
+    id: "d881b8be-e2e3-41ff-a11a-2e4d546a811e",
     category: "Romance",
     bookName: "Diário de Uma Paixão",
     coverUrl:
@@ -156,7 +163,7 @@ const booksList = [
     author: "Nicholas Sparks",
     rating: 80,
     price: 29.99,
-    publicationDate: Date.now(),
+    publicationDate: generateRandomDate(),
     pageCount: 304,
     language: "Português",
     reviews: [

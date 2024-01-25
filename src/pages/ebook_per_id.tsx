@@ -7,9 +7,12 @@ import { BiSolidLike } from "react-icons/bi";
 import { IoMdCart } from "react-icons/io";
 import { useEffect } from "react";
 import booksList from "../utils/books_list";
+import { useContext } from "react";
+import { mainContext } from "../utils/main_context";
 
 export default function EbookPerId() {
   const { id } = useParams();
+  const context = useContext(mainContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,8 +35,15 @@ export default function EbookPerId() {
               startContent={<IoMdCart size={20} />}
               color="primary"
               variant="light"
+              isDisabled={context?.cart.some((e) => e.id === id)}
+              onPress={() => {
+                if (!id) return;
+                if (context) return context.addToCart({ id, quantity: 1 });
+              }}
             >
-              Adicionar ao carrinho
+              {context?.cart.some((e) => e.id === id)
+                ? "No carrinho"
+                : "Adicionar ao carrinho"}
             </Button>
           </div>
 
@@ -41,7 +51,9 @@ export default function EbookPerId() {
             {booksList.find((e) => e.id === id)?.author}
           </p>
           <p className="text-xs text-stone-500 font-semibold">
-            Publicado em 22 Jan 2024
+            {`Publicado em ${new Date(
+              booksList.find((e) => e.id === id)?.publicationDate || ""
+            ).toLocaleDateString("pt-BR")}`}
           </p>
 
           <ScrollShadow hideScrollBar className="flex flex-1">
