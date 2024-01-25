@@ -1,24 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { NextUIProvider } from '@nextui-org/react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App.tsx';
-import './index.css';
-import Home from './pages/home.tsx';
-import EbookPerId from './pages/ebook_per_id.tsx';
-import Checkout from './pages/checkout.tsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { NextUIProvider } from "@nextui-org/react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App.tsx";
+import "./index.css";
+import Home from "./pages/home.tsx";
+import EbookPerId from "./pages/ebook_per_id.tsx";
+import Checkout from "./pages/checkout.tsx";
+import { MainProvider } from "./utils/main_context.tsx";
 
 const temporaryThemeHandler = true;
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     //errorElement: <Error />,
     element: (
       <NextUIProvider>
         <main
           className={
-            temporaryThemeHandler ? '' : 'dark text-foreground bg-background'
+            temporaryThemeHandler ? "" : "dark text-foreground bg-background"
           }
         >
           <App />
@@ -27,23 +28,25 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home />,
       },
       {
-        path: '/ebook/:id',
+        path: "/ebook/:id",
         element: <EbookPerId />,
       },
       {
-        path: '/checkout',
+        path: "/checkout",
         element: <Checkout />,
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MainProvider>
+      <RouterProvider router={router} />
+    </MainProvider>
   </React.StrictMode>
 );
