@@ -18,7 +18,7 @@ export default function EbookPerId() {
     <section className="flex flex-col gap-10">
       <section className="flex flex-row">
         <img
-          className="w-[350px] h-[500px] object-contain bg-stone-100 p-3 rounded-xl"
+          className="h-[500px] object-contain bg-stone-100 p-3 rounded-xl"
           src="https://cdn.discordapp.com/attachments/1183164572761338047/1198814616101331004/61jgm6ooXzL._SL1000_.jpg?ex=65c0461d&is=65add11d&hm=d39244db8027c3435194daffb1b1d38c8168bc820ccb6f8196097517001e9666&"
           alt=""
         />
