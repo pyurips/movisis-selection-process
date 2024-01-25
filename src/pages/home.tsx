@@ -22,15 +22,22 @@ export default function Home() {
           className="flex flex-row gap-5 w-full py-3"
           hideScrollBar={true}
         >
-          {/* <EbookCard id="dasdad" />
-          <EbookCard id="1546456" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="1546456" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="1546456" />
-          <EbookCard id="dasdad" /> */}
+          {booksList.slice(0, 5).map((e) => (
+            <EbookCard
+              id={e.id}
+              author={
+                e.author.length >= 15 ? e.author.slice(0, 15) + "..." : e.author
+              }
+              coverUrl={e.coverUrl}
+              rating={e.rating}
+              price={e.price}
+              bookName={
+                e.bookName.length >= 15
+                  ? e.bookName.slice(0, 15) + "..."
+                  : e.bookName
+              }
+            />
+          ))}
         </ScrollShadow>
       </section>
 

@@ -1,29 +1,32 @@
-import { Avatar, Chip } from '@nextui-org/react';
-import { BiSolidLike } from 'react-icons/bi';
+import { Avatar, Chip } from "@nextui-org/react";
+import { BiSolidLike } from "react-icons/bi";
 
-export default function ReaderRatingComment() {
+export default function ReaderRatingComment({
+  reviwerName,
+  personalRating,
+  comment,
+}: {
+  reviwerName: string;
+  personalRating: number;
+  comment: string;
+}) {
   return (
     <div className="flex flex-row gap-3">
-      <Avatar name="Junior" />
+      <Avatar name={reviwerName} />
       <div className="flex flex-1 flex-col">
         <div className="flex flex-row gap-3">
-          <p className="text-stone-600">Júlio da Silva</p>
+          <p className="text-stone-600">{reviwerName}</p>
           <Chip
             startContent={<BiSolidLike />}
             size="sm"
             color="success"
             variant="flat"
           >
-            80%
+            {personalRating}
           </Chip>
         </div>
 
-        <p className="text-sm text-neutral-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facere
-          ullam suscipit maxime odio voluptatum assumenda nemo aliquam. Ab ex
-          odit inventore, officiis error tempora sed! Praesentium veniam itaque
-          quas?
-        </p>
+        <p className="text-sm text-neutral-500">{comment}</p>
       </div>
     </div>
   );
