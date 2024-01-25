@@ -1,7 +1,8 @@
-import EbookCard from '../compoents/ebook_card';
-import HomeMainPost from '../compoents/home_main_post';
-import { ScrollShadow } from '@nextui-org/react';
-import HomeFilter from '../compoents/home_filter';
+import EbookCard from "../compoents/ebook_card";
+import HomeMainPost from "../compoents/home_main_post";
+import { ScrollShadow } from "@nextui-org/react";
+import HomeFilter from "../compoents/home_filter";
+import booksList from "../utils/books_list";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           className="flex flex-row gap-5 w-full py-3"
           hideScrollBar={true}
         >
-          <EbookCard id="dasdad" />
+          {/* <EbookCard id="dasdad" />
           <EbookCard id="1546456" />
           <EbookCard id="dasdad" />
           <EbookCard id="dasdad" />
@@ -29,7 +30,7 @@ export default function Home() {
           <EbookCard id="dasdad" />
           <EbookCard id="dasdad" />
           <EbookCard id="1546456" />
-          <EbookCard id="dasdad" />
+          <EbookCard id="dasdad" /> */}
         </ScrollShadow>
       </section>
 
@@ -45,14 +46,22 @@ export default function Home() {
         <HomeFilter />
 
         <div className="grid grid-cols-4 gap-3">
-          <EbookCard id="dasdad" />
-          <EbookCard id="1546456" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="1546456" />
-          <EbookCard id="dasdad" />
-          <EbookCard id="dasdad" />
+          {booksList.map((e) => (
+            <EbookCard
+              id={e.id}
+              author={
+                e.author.length >= 15 ? e.author.slice(0, 15) + "..." : e.author
+              }
+              coverUrl={e.coverUrl}
+              rating={e.rating}
+              price={e.price}
+              bookName={
+                e.bookName.length >= 15
+                  ? e.bookName.slice(0, 15) + "..."
+                  : e.bookName
+              }
+            />
+          ))}
         </div>
       </section>
     </section>

@@ -1,8 +1,22 @@
-import { Card, CardBody, CardFooter, Image, Chip } from '@nextui-org/react';
+import { Card, CardBody, CardFooter, Image, Chip } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
-import { BiSolidLike } from 'react-icons/bi';
+import { BiSolidLike } from "react-icons/bi";
 
-export default function EbookCard({ id }: { id: string }) {
+export default function EbookCard({
+  id,
+  coverUrl,
+  rating,
+  author,
+  price,
+  bookName,
+}: {
+  id: string;
+  coverUrl: string;
+  rating: number;
+  author: string;
+  price: number;
+  bookName: string;
+}) {
   const navigate = useNavigate();
 
   return (
@@ -10,7 +24,7 @@ export default function EbookCard({ id }: { id: string }) {
       shadow="sm"
       //key={index}
       isPressable
-      onPress={() => navigate('/ebook/' + id)}
+      onPress={() => navigate("/ebook/" + id)}
       className="min-w-[200px] w-[200px]"
     >
       <CardBody className="overflow-visible p-0">
@@ -20,21 +34,24 @@ export default function EbookCard({ id }: { id: string }) {
           width="100%"
           //alt={item.title}
           className="w-full object-cover h-[300px]"
-          src={
-            'https://cdn.discordapp.com/attachments/1183164572761338047/1198814616101331004/61jgm6ooXzL._SL1000_.jpg?ex=65c0461d&is=65add11d&hm=d39244db8027c3435194daffb1b1d38c8168bc820ccb6f8196097517001e9666&'
-          }
+          src={coverUrl}
         />
 
         <div className="flex flex-row items-center justify-between p-2">
-          <p className=" text-stone-700 font-bold text-sm">Nome do livro</p>
-          <Chip startContent={<BiSolidLike />} size="sm" color="success" variant='flat'>
-            80%
+          <p className=" text-stone-700 font-bold text-sm">{bookName}</p>
+          <Chip
+            startContent={<BiSolidLike />}
+            size="sm"
+            color="success"
+            variant="flat"
+          >
+            {rating}
           </Chip>
         </div>
       </CardBody>
       <CardFooter className="text-small justify-between">
-        <p className="font-bold text-stone-500">Autor</p>
-        <p className="text-stone-800">{'R$ 29,00'}</p>
+        <p className="font-bold text-stone-500">{author}</p>
+        <p className="text-stone-800">{`R$ ${price}`}</p>
       </CardFooter>
     </Card>
   );
